@@ -13,13 +13,21 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+	//testImplementation 'org.springframework.security:spring-security-test'
+	// https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
+	implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.5.3'
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+	annotationProcessor "org.projectlombok:lombok:1.18.24"
+
+
+
 }
 
 tasks.named('test') {

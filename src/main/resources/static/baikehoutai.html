@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识百科系统后台</title>
+    <style>
+        * {
+            /* 去掉内外边距 */
+            padding: 0;
+            margin: 0;
+            /* 去掉不必要的样式 */
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            background-color: #E4EBF5;
+        }
+
+        header {
+            background-color: #527AC7;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .htitle {
+            float: left;
+        }
+
+        .htitle a img {
+            width: 300px;
+            height: 40px;
+        }
+
+        .hlist {
+            float: left;
+        }
+
+        .hli {
+            /*让列表横排*/
+            float: left;
+            width: 100px;
+            height: 40px;
+            /*里面的字水平垂直居中*/
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .hli a {
+            color: #000;
+            /* 链接变成块显示*/
+            display: block;
+        }
+
+        .hli a:hover {
+            background: #ccc;
+        }
+
+        .huser {
+            float: right;
+        }
+
+        .main {
+            margin: 15px 20px 30px 20px;
+            padding: 15px 20px 30px 20px;
+            background-color: #fff;
+        }
+        .mnav {
+            font-size: small;
+        }
+        .mtitle {
+            margin-top: 10px;
+            font-size: large;
+        }
+        .mnewbtn {
+            margin-top: 10px;
+        }
+        .mfilter {
+            margin-top: 10px;
+            background-color: #F8F8F9;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .mfspan {
+            margin-right: 50px;
+        }
+        .mfspan label {
+            margin-right: 20px;
+        }
+        .mresult {
+            margin-top: 20px;
+        }
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid #527AC7;
+        }
+        table th {
+            background-color: #EEF4F8;
+        }
+        table td,th {
+            text-align: center;
+            border: 1px solid #70aefb;
+            vertical-align: middle;
+            width: 80%;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="htitle">
+            <a href="./">
+                <img src="/static/img/logo.png">
+            </a>
+            <span>知识百科系统后台</span>
+        </span>
+        <ul class="hlist">
+            <li class="hli"><a href="#">类别管理</a></li>
+            <li class="hli"><a href="#">知识管理</a></li>
+            <li class="hli"><a href="#">系统管理</a></li>
+        </ul>
+        <span class="huser">
+            <img src="">
+            <span>张三</span>
+        </span>
+    </header>
+    <main>
+        <div class="main">
+            <div class="mnav">首页 > 内容管理</div>
+            <div class="mtitle">知识管理</div>
+            <div class="mnewbtn">
+                <button>新建知识</button>
+            </div>
+            <div class="mfilter">
+                <span class="mfspan"><label>知识名称</label><input type="text"></span>
+                <span class="mfspan"><label>知识类别</label><input type="text"></span>
+                <span class="mfspan"><label>发布状态</label><input type="text"></span>
+                <span class="mfspan"><label>发布日期</label><input type="text"></span>
+                <span class="mfspan"><label>是否英文</label><input type="text"></span>
+                <span class="mfspan"><label>发布单位</label><input type="text"></span>
+                <span class="mfspan"><label>发布人</label><input type="text"></span>
+                <button>搜索</button>
+            </div>
+            <div class="mresult">
+                <table>
+                    <tr>
+                        <th>知识名称</th>
+                        <th>知识类别</th>
+                        <th>发布状态</th>
+                        <th>发布单位</th>
+                        <th>发布人</th>
+                        <th>发布日期</th>
+                        <th>更新时间</th>
+                        <th>管理</th>
+                    </tr>
+                    <tr>
+                        <td>学习力与学业发展</td>
+                        <td>学习教学</td>
+                        <td>已发布</td>
+                        <td>学生发展与全球事务部</td>
+                        <td>张老师</td>
+                        <td>2023-03-22</td>
+                        <td>2023-03-22 19:00</td>
+                        <td>
+                            <a href="#">编辑</a>
+                            <a href="#">删除</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

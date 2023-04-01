@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <!-- 获取所有学生信息 -->
+    <select id="list" resultType="com.example.demo.entity.User">
+        select * from user
+    </select>
+    <!-- 添加用户 -->
+    <insert id="insert" parameterType="com.example.demo.entity.User">
+        INSERT INTO
+            user(name,number,password,phone,department,create_time,update_time)
+        values
+            (#{name},#{number},#{password},#{phone},#{department},#{create_time},#{update_time});
+    </insert>
+    <!-- 删除指定id用户 -->
+    <delete id="delById" parameterType="String">
+        DELETE FROM user
+        WHERE id = #{id};
+    </delete>
+    <!-- 更新指定id用户 -->
+    <update id="updateById" parameterType="com.example.demo.entity.User">
+        UPDATE student
+        SET name = #{name},
+            number = #{number},
+            password = #{password},
+            phone = #{phone},
+            department = #{department},
+            create_time = #{create_time},
+            update_time = #{update_time},
+        WHERE id = #{id};
+    </update>
+    <!-- 根据id查询用户 -->
+    <select id="getById" parameterType="String" resultType="com.example.demo.entity.User">
+        select * from user where id = #{id};
+    </select>
+    <!-- 通用查询 -->
+    <select id="getByXxx" parameterType="com.example.demo.entity.User" resultType="com.example.demo.entity.User">
+        select * from user where id = #{id} or number = #{number} or phone = #{number} or department = #{department};
+    </select>
+</mapper>

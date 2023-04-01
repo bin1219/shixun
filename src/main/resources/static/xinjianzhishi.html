@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识百科系统后台</title>
+    <style>
+        * {
+            /* 去掉内外边距 */
+            padding: 0;
+            margin: 0;
+            /* 去掉不必要的样式 */
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            background-color: #E4EBF5;
+        }
+
+        header {
+            background-color: #527AC7;
+            height: 50px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .htitle {
+            float: left;
+        }
+
+        .htitle a img {
+            width: 300px;
+            height: 40px;
+        }
+
+        .hlist {
+            float: left;
+        }
+
+        .hli {
+            /*让列表横排*/
+            float: left;
+            width: 100px;
+            height: 40px;
+            /*里面的字水平垂直居中*/
+        }
+
+        .hli a {
+            color: #000;
+            /* 链接变成块显示*/
+            display: block;
+        }
+
+        .hli a:hover {
+            background: #ccc;
+        }
+
+        .huser {
+            float: right;
+        }
+
+        .main {
+            margin: 15px 20px 30px 20px;
+            padding: 15px 20px 30px 20px;
+            background-color: #fff;
+        }
+
+        .mnav {
+            font-size: small;
+        }
+
+        .mtitle {
+            margin-top: 10px;
+            font-size: large;
+        }
+        .ckeditor{
+            width: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="htitle">
+            <span>
+                <a href="./">
+                    <img src="./img/logo.png">
+                </a>
+            </span>
+            <span>知识百科系统后台</span>
+        </span>
+        <ul class="hlist">
+            <li class="hli"><a href="#">类别管理</a></li>
+            <li class="hli"><a href="#">知识管理</a></li>
+            <li class="hli"><a href="#">系统管理</a></li>
+        </ul>
+        <span class="huser">
+            <span>😊<img src=""></span>
+            <span>张三</span>
+        </span>
+    </header>
+    <main>
+        <div class="main">
+            <div>
+                <div class="mnav">首页 > 知识管理 > 创建知识</div>
+                <div class="mtitle">基本信息</div>
+                <ul>
+                    <li><label>知识名称</label><input type="text"></li>
+                    <li><label>发布单位</label><input type="text"></li>
+                    <li><label>发布日期</label><input type="text"></li>
+                    <li><label>知识类型</label><input type="text"></li>
+                    <li><label>知识标签</label><input type="text"></li>
+                    <li>
+                        <label>背景图片</label>
+                        <input type="file">
+                        <div>
+                            tupianzhanshi
+                        </div>
+                    </li>
+                </ul>
+                <label>内容详情</label>
+                <div class="ckeditor">
+                    <div id="editor">
+                        <br><br><br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mokuai"> + 常见问题</div>
+            <div class="mokuai"> + 主要内容</div>
+            <div> + 新建模块</div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <button id="pushbtn">发布</button>
+            <button>取消</button>
+        </div>
+    </footer>
+    <script src="./js/ckeditor.js"></script>
+    <script src="./js/zh-cn.js"></script>
+    <script>
+        const config = {
+        }
+        config.language = 'zh-cn';
+        
+        ClassicEditor
+            .create(document.querySelector('#editor'), config)
+            .then(editor => {
+                window.editor = editor;
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        document.getElementById('pushbtn').addEventListener('click', () => {
+            let editorData = editor.getData();
+            console.log(editorData);
+        })
+    </script>
+</body>
+
+</html>
